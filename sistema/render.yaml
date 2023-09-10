@@ -1,4 +1,0 @@
-services:
-  - name: web
-    buildCommand: python manage.py collectstatic --noinput
-    staticPublishPath: "/static"
