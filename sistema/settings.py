@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cwc9m+z#ppu8)+@v#$7ci$=w*gae$+%n&gfq6kcsn#59ze(3a3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
+DEBUG='false'
 ALLOWED_HOSTS = ['heraldos.onrender.com']
 
 
@@ -117,13 +117,6 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL = 'inventario.Usuario' # modelo de usuario
-if not DEBUG:
-    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
