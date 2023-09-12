@@ -23,7 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cwc9m+z#ppu8)+@v#$7ci$=w*gae$+%n&gfq6kcsn#59ze(3a3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = ['heraldos.onrender.com']
 
