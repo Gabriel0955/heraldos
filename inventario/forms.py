@@ -33,10 +33,12 @@ class ProductoFormulario(forms.ModelForm):
         )
     class Meta:
         model = Producto
-        fields = ['descripcion','precio','categoria','tiene_iva']
+        fields = ['descripcion','precio','categoria','tiene_iva','disponible']
         labels = {
+            'precio': 'Cantidad',
         'descripcion': 'Nombre',
-        'tiene_iva': 'Incluye IVA?'
+        'tiene_iva': 'Incluye IVA?',
+
         }
         widgets = {
         'descripcion': forms.TextInput(attrs={'placeholder': 'Nombre del producto',
@@ -118,7 +120,7 @@ class ClienteFormulario(forms.ModelForm):
 
     class Meta:
         model = Cliente
-        fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2']
+        fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2','productos']
         labels = {
         'cedula': 'Cedula del cliente',
         'nombre': 'Nombre del cliente',
@@ -238,7 +240,7 @@ class ProveedorFormulario(forms.ModelForm):
 
     class Meta:
         model = Cliente
-        fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2']
+        fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2','productos']
         labels = {
         'cedula': 'Cedula del proveedor',
         'nombre': 'Nombre del proveedor',
