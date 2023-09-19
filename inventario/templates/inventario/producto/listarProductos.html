@@ -42,7 +42,7 @@
                                                         <tr>
                                                             <th>Item</th>
                                                             <th>Nombre</th>
-                                                            <th>Precio</th>
+                                                            <th>Cantidad</th>
                                                             <th>Disponible</th>
                                                             <th>Categoria</th>
                                                             <th>IVA</th>
@@ -55,14 +55,14 @@
                                                             <td>{{ fila.id}}</td>
                                                             <td>{{ fila.descripcion }}</td>
                                                             <td>{{ fila.precio }}</td>
-                                                            <td>{{ fila.disponible }}</td>
+                                                            <td>{{ fila.disponible}}</td>
                                                             <td>
                                                     {% if fila.categoria == '1' %}
-                                                            Unidad
+                                                            Donaciones en Efectivo
                                                     {% elif fila.categoria == '2' %}
-                                                            Kilo
+                                                            Transferencias Bancarias
                                                     {% elif fila.categoria == '3' %}
-                                                            Litro
+                                                            Vales de Comida
                                                     {% elif fila.categoria == '4' %}
                                                             Otros
                                                         {%endif%}
@@ -85,7 +85,7 @@
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item" href="/inventario/editarProducto/{{ fila.id}}">Editar/Ver producto</a>
                                                     <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" onclick="eliminarEntrada({fila,id}, 'producto')">Eliminar producto</a>
+                                                    <a class="dropdown-item" onclick="eliminarEntrada('{{fila.id}}', 'producto')">Eliminar producto</a>
 
 
                                                     </div>
@@ -104,5 +104,6 @@
                         </div>
                     </section>
                 </article>
+
 {% endblock %}
 
